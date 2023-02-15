@@ -4,7 +4,7 @@
   "description": "An API that get the information of the pokemon based in the URL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Sebastian Orellana",
   "license": "ISC",
@@ -14,5 +14,9 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "supertest": "^6.3.3"
   }
 }
