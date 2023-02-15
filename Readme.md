@@ -67,3 +67,11 @@ $ docker run -p 3000:3000 siorellana/pokedex-api
 
 ## License
 This project is licensed under the MIT License.
+
+## Contributors
+
+* [@ChatGPT](https://github.com/ChatGPT) - OpenAI-trained conversational AI model
+
+## Copyright
+
+This project is not affiliated with, endorsed, sponsored, or specifically approved by The Pokémon Company or its affiliates. Pokémon is a registered trademark of The Pokémon Company.
