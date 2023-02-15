@@ -1,6 +1,6 @@
 # Pokedex API
 
-[![Build Status](https://github.com/siorellana/pokedex-api/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/siorellana/pokedex-api/actions/workflows/build-and-publish.yml)
+[![CI/CD](https://github.com/siorellana/pokedex-api/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/siorellana/pokedex-api/actions/workflows/pipeline.yml)
 [![Docker Hub](https://img.shields.io/docker/pulls/siorellana/pokedex-api)](https://hub.docker.com/r/siorellana/pokedex-api)
 
 This repository contains a RESTful API for a Pokedex that allows users to search for information about different Pokemon. The API is built using Node.js and Express, and data about the Pokemon is stored in JSON files.
