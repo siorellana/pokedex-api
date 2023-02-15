@@ -1,0 +1,92 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Pokedex API",
+        "description": "A simple API for a Pokedex",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "paths": {
+        "/start/search": {
+            "get": {
+                "summary": "Starts a search for a random Pokemon every second",
+                "responses": {
+                    "200": {
+                        "description": "Pokemon search interval started"
+                    }
+                }
+            }
+        },
+        "/stop/search": {
+            "get": {
+                "summary": "Stops the search for random Pokemon and returns the results",
+                "responses": {
+                    "200": {
+                        "description": "Returns the search results"
+                    }
+                }
+            }
+        },
+        "/validate/pokemon": {
+            "get": {
+                "summary": "Searches for a random Pokemon in two JSON files",
+                "responses": {
+                    "200": {
+                        "description": "Returns the name and any matching data"
+                    },
+                    "404": {
+                        "description": "Pokemon not found"
+                    }
+                }
+            }
+        },
+        "/{pokemon}": {
+            "get": {
+                "summary": "Retrieves information about a specific Pokemon",
+                "parameters": [
+                    {
+                        "name": "pokemon",
+                        "in": "path",
+                        "description": "The name of the desired Pokemon",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the Pokemon information"
+                    },
+                    "404": {
+                        "description": "Pokemon not found"
+                    }
+                }
+            }
+        },
+        "/notfound": {
+            "get": {
+                "summary": "Returns a 404 error message",
+                "responses": {
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/notavailable": {
+            "get": {
+                "summary": "Returns a 502 error message",
+                "responses": {
+                    "502": {
+                        "description": "Pokedex not available"
+                    }
+                }
+            }
+        }
+    }
+}
