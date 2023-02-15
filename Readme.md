@@ -1,4 +1,4 @@
-# Pokedex API
+# Pokedex API <img align="right" src="https://github.com/siorellana/pokedex-api/data/images/pokedex-icon.png">
 
 [![CI/CD](https://github.com/siorellana/pokedex-api/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/siorellana/pokedex-api/actions/workflows/pipeline.yml)
 [![Docker Hub](https://img.shields.io/docker/pulls/siorellana/pokedex-api)](https://hub.docker.com/r/siorellana/pokedex-api)
@@ -9,7 +9,6 @@ This repository contains a RESTful API for a Pokedex that allows users to search
 
 The API has the following endpoints:
 
-- `GET /`: returns a welcome message.
 - `GET /:pokemon`: returns information about the specified Pokemon.
 - `GET /start/search`: starts an interval that searches for a random Pokemon every second.
 - `GET /stop/search`: stops the interval started by `/start/search`.
