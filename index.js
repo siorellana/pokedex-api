@@ -124,7 +124,7 @@ app.get('/:pokemon', (req, res) => {
             } else {
                 const errorMessage = `Pokemon not found: ${pokemonName}`;
                 console.error(errorMessage);
-                res.status(404).send(errorMessage);
+                res.status(523).send(errorMessage);
                 tracer.trace('http.response', {
                     method: req.method,
                     url: req.url,

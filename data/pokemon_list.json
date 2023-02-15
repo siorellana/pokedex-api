@@ -1,11 +1,27 @@
 [
     {
-        "name": "Ricardo",
-        "id": 130
+        "name": "Beedrill",
+        "id": 15
     },
     {
         "name": "Miguel",
         "id": 9
+    },
+    {
+        "name": "Vaporeon",
+        "id": 134
+    },
+    {
+        "name": "Pidgeot",
+        "id": 18
+    },
+    {
+        "name": "Venusaur",
+        "id": 3
+    },
+    {
+        "name": "Nidoqueen",
+        "id": 31
     },
     {
         "name": "Vaporeon",
