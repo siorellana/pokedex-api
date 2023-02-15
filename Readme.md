@@ -1,4 +1,4 @@
-# Pokedex API <img align="right" src="https://github.com/siorellana/pokedex-api/blob/master/data/images/pokedex-icon.png">
+# Pokedex API <img align="right" src="https://github.com/siorellana/pokedex-api/blob/master/data/images/pokedex-icon.png" width="50" height="50">
 
 [![CI/CD](https://github.com/siorellana/pokedex-api/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/siorellana/pokedex-api/actions/workflows/pipeline.yml)
 [![Docker Hub](https://img.shields.io/docker/pulls/siorellana/pokedex-api)](https://hub.docker.com/r/siorellana/pokedex-api)
