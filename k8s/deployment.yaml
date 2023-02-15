@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokedex-app
+  labels:
+    tags.datadoghq.com/env: "staging"
+    tags.datadoghq.com/service: "pokedex-app"
+    tags.datadoghq.com/version: "v.1.0.0"
+spec:
+  replicas: 1 # Number of replicas
+  selector:
+    matchLabels:
+      app: pokedex-app
+  template:
+    metadata:
+      labels:
+        app: pokedex-app
+        admission.datadoghq.com/enabled: "true"
+        tags.datadoghq.com/env: "staging"
+        tags.datadoghq.com/service: "pokedex-app"
+        tags.datadoghq.com/version: "v.1.0.0"
+    spec:
+      containers:
+        - name: pokedex-app
+          image: siorellana/pokedex-api:latest # Replace with your image
+          env:
+            - name: DD_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: DD_LOGS_INJECTION
+              value: "true"
+          ports:
+            - containerPort: 3000 # Replace with the port your app listens on

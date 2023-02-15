@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pokedex-app
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000 # Replace with the port your app listens on
+  selector:
+    app: pokedex-app
