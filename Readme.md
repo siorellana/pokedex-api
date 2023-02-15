@@ -1,35 +1,70 @@
 # Pokedex API
 
-This is a simple API for a Pokedex. It allows you to retrieve information about Pokemon and search for them using a separate "validate" endpoint.
+[![Build Status](https://github.com/siorellana/pokedex-api/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/siorellana/pokedex-api/actions/workflows/build-and-publish.yml)
+[![Docker Hub](https://img.shields.io/docker/pulls/siorellana/pokedex-api)](https://hub.docker.com/r/siorellana/pokedex-api)
 
-## Installation
-
-To use this API, clone the repository and run `npm install` to install the required dependencies.
+This repository contains a RESTful API for a Pokedex that allows users to search for information about different Pokemon. The API is built using Node.js and Express, and data about the Pokemon is stored in JSON files.
 
 ## Endpoints
 
-The following endpoints are available:
+The API has the following endpoints:
 
-### GET /start/search
+- `GET /`: returns a welcome message.
+- `GET /:pokemon`: returns information about the specified Pokemon.
+- `GET /start/search`: starts an interval that searches for a random Pokemon every second.
+- `GET /stop/search`: stops the interval started by `/start/search`.
+- `GET /validate/pokemon`: returns information about a random Pokemon if it is present in a pre-defined list.
+- `GET /notfound`: returns a 404 error.
+- `GET /notavailable`: returns a 502 error.
 
-Starts a search for a random Pokemon every second. The results of each search are added to an array that can be retrieved with the `/stop/search` endpoint.
+## Usage
 
-### GET /stop/search
+To use the API, you need to have Node.js and npm installed.
 
-Stops the search for random Pokemon and returns the results of each search as an array.
+1. Clone the repository:
 
-### GET /validate/pokemon
+```sh
+$ git clone https://github.com/siorellana/pokedex-api.git
+```
 
-Searches for a random Pokemon in two JSON files: `pokemon.json` and `pokemon_list.json`. If a matching Pokemon is found in both files, returns the name of the Pokemon and any matching data.
+2. Install the dependencies:
+```sh
+$ cd pokedex-api
+$ npm install
+```
+3. Start the server
 
-### GET /:pokemon
+```sh
+$ npm start
+```
+The server should be listening at http://localhost:3000.
 
-Retrieves information about a specific Pokemon. The `:pokemon` parameter should be replaced with the name of the desired Pokemon.
+## Tests
+This repository includes some basic tests. To run them, you need to have jest and supertest installed.
 
-### GET /notfound
+1. Install the development dependencies:
 
-Returns a 404 error message and logs the request.
+```sh
+$ npm install --only=dev
+```
 
-### GET /notavailable
+2. Run the tests:
+```sh
+$ npm test
+```
 
-Returns a 502 error message and logs the request.
+## Docker
+This API is also available as a Docker image. To run it in a container, you need to have Docker installed.
+
+1. Pull the image from Docker Hub:
+```sh
+$ docker pull siorellana/pokedex-api
+```
+
+2. Run a container with the image:
+```sh
+$ docker run -p 3000:3000 siorellana/pokedex-api
+```
+
+## License
+This project is licensed under the MIT License.
