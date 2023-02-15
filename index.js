@@ -77,9 +77,19 @@ app.get('/validate/pokemon', (req, res) => {
                             pokemon: randomPokemon.name,
                             matches: matchingPokemon,
                         });
+                        tracer.trace('http.request', {
+                            method: req.method,
+                            url: req.url,
+                            status_code: res.statusCode,
+                        });
                     } else {
                         console.log(`Pokemon ${randomPokemon.name} not found`);
                         res.status(404).send(`Pokemon ${randomPokemon.name} not found`);
+                        tracer.trace('http.request', {
+                            method: req.method,
+                            url: req.url,
+                            status_code: res.statusCode,
+                        });
                     }
                 }
             });
